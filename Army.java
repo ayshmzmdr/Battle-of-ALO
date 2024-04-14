@@ -17,6 +17,17 @@ public class Army {
         UserDef=0;
 
     }
+    private void delay() 
+    {
+        try 
+        {
+            Thread.sleep(650);
+        } 
+        catch (InterruptedException e) 
+        {
+            e.printStackTrace();
+        }
+    }
     public void play()
     {
         Scanner sc=new Scanner(System.in);
@@ -38,28 +49,28 @@ public class Army {
         System.out.print("TAKING POSITION");
         for(int i=0;i<5;i++)
         {
-            for(int J=0;J<900000000;J++);
+            delay();
             System.out.print(".");
         }
         System.out.println();
         System.out.print("DESTROYING ENEMY FLANKS");
         for(int i=0;i<5;i++)
         {
-            for(int J=0;J<1000000;J++);
+            delay();
             System.out.print(".");
         }
         System.out.println();
         System.out.print("DESTROYING ENEMY SUPPORT VEHICLES");
         for(int i=0;i<5;i++)
         {
-            for(int J=0;J<1000000;J++);
+            delay();
             System.out.print(".");
         }
         System.out.println();
         System.out.print("DESTROYING THE FINAL WAVE");
         for(int i=0;i<5;i++)
         {
-            for(int J=0;J<1000000;J++);
+            delay();
             System.out.print(".");
         }
         System.out.println();
