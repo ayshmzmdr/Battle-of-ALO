@@ -1,7 +1,5 @@
 # Battle-of-ALO
 
- for(int i=0;i<5;i++)
-        {
-            delay();
-            System.out.print(".");
-        }
+ Battle of ALO is a battle simulator based on an fictional place of ALO. ALO is a chaotic place due to the constant wars that occur here among the four Kingdoms : TMM, ZS5Z, Ramphashats and M Gang. Among the four, ZS5Z and TMM are the major two kingdoms. Ramphashats was an ancient kingdom which has now declined and gone too weak to win war in any front. The last kingdom, or more particularly the M Gang, is a newly formed notorious association whose only goal is destruction. They do not have guns or grenades and rely only on nuclear artilleries and nuclear bombing of the enemy territories. However since use of motar and artilleries require some high manpower, they fall weak if they do not have the minimum number of troops in the warzone.
+
+ The Game in its current state requires the user to answer a few questions regarding the details of the user's army, for example the army the user would like to join to and also the number of soldier the user wants to deploy in the warzone from his army. The simulator shall pick an opponent for the user with some random number of soldiers from that army and the two groups then battle it out. Remember, the choas here in ALO has often led to so much confusion that sometimes the user might encounter a civil war!! 
