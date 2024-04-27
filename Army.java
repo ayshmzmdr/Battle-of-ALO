@@ -8,6 +8,16 @@ public class Army {
     public int UserAtt;
     public int UserDef;
 
+    int UserHealth;
+    int EnemyHealth;
+
+    int EnemySize;
+
+    Army TMM;
+    Army ZS5Z;
+    Army MGang;
+    Army Ramphashats;
+
     public Army()
     {
         Soldier=0;
@@ -28,6 +38,19 @@ public class Army {
             e.printStackTrace();
         }
     }
+
+    public void defineArmies()
+    {
+        TMM=new Army();
+        ZS5Z=new Army();
+        Ramphashats=new Army();
+        MGang=new Army();
+    }
+
+
+
+
+
     public void play()
     {
         Scanner sc=new Scanner(System.in);
@@ -46,6 +69,52 @@ public class Army {
             case 4: Enemy="M Gang"; break;
         }
         System.out.println("Your opponent: "+Enemy);
+        TMM.Soldier=250;
+        ZS5Z.Soldier=250;
+        Ramphashats.Soldier=50;
+        if(size>=10)
+        {
+            MGang.Soldier=1000;
+        }
+        else 
+        {
+            MGang.Soldier=0;
+        }
+        sc.close();
+    }
+
+
+
+
+
+    public void stats()
+    {
+        Random rc=new Random();
+        int EnemySize = rc.nextInt(1000)+1;
+        switch (enemyVal)
+        {
+            case 1: EnemyAtt=EnemySize*TMM.Soldier;  EnemyDef=EnemySize*TMM.Soldier; break;
+            case 2: EnemyAtt=EnemySize*ZS5Z.Soldier;  EnemyDef=EnemySize*ZS5Z.Soldier; break;
+            case 3: EnemyAtt=EnemySize*Ramphashats.Soldier;  EnemyDef=EnemySize*Ramphashats.Soldier; break;
+            case 4: EnemyAtt=EnemySize*MGang.Soldier;  EnemyDef=EnemySize*MGang.Soldier; break;
+        }
+        switch (choice)
+        {
+            case 1: UserAtt=size*TMM.Soldier;  UserDef=size*TMM.Soldier; break;
+            case 2: UserAtt=size*ZS5Z.Soldier;  UserDef=size*ZS5Z.Soldier; break;
+            case 3: UserAtt=size*Ramphashats.Soldier;  UserDef=size*Ramphashats.Soldier; break;
+            case 4: UserAtt=size*MGang.Soldier; UserDef=size*MGang.Soldier; break;
+        }
+    }
+
+
+    
+
+
+    public void battle()
+    {
+        UserHealth=UserDef-EnemyAtt;
+        EnemyHealth=EnemyDef-UserAtt;
         System.out.print("TAKING POSITION");
         for(int i=0;i<5;i++)
         {
@@ -74,9 +143,26 @@ public class Army {
             System.out.print(".");
         }
         System.out.println();
-        sc.close();
-
-
+        if(size>5000)
+        {
+            System.out.println("ENEMY WON!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("YOUR ARMY LOST DUE TO LACK OF COOPERATION!!!!!!!!!!");
+        }
+        else if(UserHealth==EnemyHealth)
+        {
+            System.out.println("DRAW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("NO CLEAR WINNER EMERGED!!!!!!!!!!");
+        }
+        else 
+        {
+            System.out.println((UserHealth>EnemyHealth?"YOU":"ENEMY")+" WON!!!!!!!!");
+        }
     }
+
+
+
+
+    
+    
 
 }
