@@ -27,7 +27,7 @@ public class Army {
         UserDef=0;
 
     }
-    private void delay() 
+    public void delay() 
     {
         try 
         {
@@ -69,6 +69,17 @@ public class Army {
             case 4: Enemy="M Gang"; break;
         }
         System.out.println("Your opponent: "+Enemy);
+        
+        sc.close();
+    }
+
+
+
+
+
+    public void stats()
+    {
+
         TMM.Soldier=250;
         ZS5Z.Soldier=250;
         Ramphashats.Soldier=50;
@@ -80,15 +91,8 @@ public class Army {
         {
             MGang.Soldier=0;
         }
-        sc.close();
-    }
 
-
-
-
-
-    public void stats()
-    {
+        
         Random rc=new Random();
         int EnemySize = rc.nextInt(1000)+1;
         switch (enemyVal)
@@ -106,63 +110,6 @@ public class Army {
             case 4: UserAtt=size*MGang.Soldier; UserDef=size*MGang.Soldier; break;
         }
     }
-
-
-    
-
-
-    public void battle()
-    {
-        UserHealth=UserDef-EnemyAtt;
-        EnemyHealth=EnemyDef-UserAtt;
-        System.out.print("TAKING POSITION");
-        for(int i=0;i<5;i++)
-        {
-            delay();
-            System.out.print(".");
-        }
-        System.out.println();
-        System.out.print("DESTROYING ENEMY FLANKS");
-        for(int i=0;i<5;i++)
-        {
-            delay();
-            System.out.print(".");
-        }
-        System.out.println();
-        System.out.print("DESTROYING ENEMY SUPPORT VEHICLES");
-        for(int i=0;i<5;i++)
-        {
-            delay();
-            System.out.print(".");
-        }
-        System.out.println();
-        System.out.print("DESTROYING THE FINAL WAVE");
-        for(int i=0;i<5;i++)
-        {
-            delay();
-            System.out.print(".");
-        }
-        System.out.println();
-        if(size>5000)
-        {
-            System.out.println("ENEMY WON!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println("YOUR ARMY LOST DUE TO LACK OF COOPERATION!!!!!!!!!!");
-        }
-        else if(UserHealth==EnemyHealth)
-        {
-            System.out.println("DRAW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println("NO CLEAR WINNER EMERGED!!!!!!!!!!");
-        }
-        else 
-        {
-            System.out.println((UserHealth>EnemyHealth?"YOU":"ENEMY")+" WON!!!!!!!!");
-        }
-    }
-
-
-
-
-    
     
 
 }

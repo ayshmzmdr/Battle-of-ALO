@@ -1,2 +1,2 @@
-javac Army.java Main.java
+javac GUI.java Main.java
 java Main.java

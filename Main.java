@@ -2,11 +2,12 @@
 class Main {
     public static void main(String args[])
     {
-        Army start=new Army();
+        /*Army start=new Army();
         start.defineArmies();
         start.play();
         start.stats();
-        start.battle();
+        start.battle();*/
+        new GUI();
 
     }
 
