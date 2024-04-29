@@ -12,6 +12,7 @@ public class GUI extends Army implements ActionListener,KeyListener
 
     public GUI()
     {
+
         defineArmies();
 
         
@@ -35,18 +36,40 @@ public class GUI extends Army implements ActionListener,KeyListener
         TBut.addActionListener(this);
         TBut.setLocation(90, 500);
         TBut.setSize(100,50);
+        TBut.setFont(new Font("Algiers",Font.CENTER_BASELINE,15));
+        TBut.setOpaque(false);
+        TBut.setContentAreaFilled(false);
+        TBut.setForeground(Color.WHITE);
+
+
         ZBut=new JButton("ZS5Z");
         ZBut.addActionListener(this);
         ZBut.setLocation(240, 500);
         ZBut.setSize(100, 50);
+        ZBut.setFont(new Font("Algiers",Font.CENTER_BASELINE,15));
+        ZBut.setOpaque(false);
+        ZBut.setContentAreaFilled(false);
+        ZBut.setForeground(Color.WHITE);
+
+
         RBut=new JButton("Ramphashats");
         RBut.addActionListener(this);
         RBut.setLocation(390, 500);
         RBut.setSize(200, 50);
+        RBut.setFont(new Font("Algiers",Font.CENTER_BASELINE,15));
+        RBut.setOpaque(false);
+        RBut.setContentAreaFilled(false);
+        RBut.setForeground(Color.WHITE);
+
+
         MBut=new JButton("MGang");
         MBut.addActionListener(this);
         MBut.setLocation(640, 500);
         MBut.setSize(100, 50);
+        MBut.setFont(new Font("Algiers",Font.CENTER_BASELINE,15));
+        MBut.setOpaque(false);
+        MBut.setContentAreaFilled(false);
+        MBut.setForeground(Color.WHITE);
 
         BatBut=new JButton("Deploy army");
         BatBut.addActionListener(this);
@@ -54,6 +77,9 @@ public class GUI extends Army implements ActionListener,KeyListener
         BatBut.setSize(200, 50);
         BatBut.setFont(new Font("Ariel",Font.CENTER_BASELINE,20));
         BatBut.setVisible(false);
+        BatBut.setOpaque(false);
+        BatBut.setContentAreaFilled(false);
+        BatBut.setForeground(Color.WHITE);
 
 
         text=new JTextField();
