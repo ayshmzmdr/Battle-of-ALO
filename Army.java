@@ -8,15 +8,18 @@ public class Army {
     public int UserAtt;
     public int UserDef;
 
-    int UserHealth;
-    int EnemyHealth;
+    public boolean result;
 
-    int EnemySize;
+    public int UserHealth;
+    public int EnemyHealth;
 
-    Army TMM;
-    Army ZS5Z;
-    Army MGang;
-    Army Ramphashats;
+    public int EnemySize;
+
+    public Army TMM;
+    public Army ZS5Z;
+    public Army MGang;
+    public Army Ramphashats;
+    Random rc;
 
     public Army()
     {
@@ -25,13 +28,14 @@ public class Army {
         EnemyDef=0;
         UserAtt=0;
         UserDef=0;
+        rc=new Random();
 
     }
     public void delay() 
     {
         try 
         {
-            Thread.sleep(650);
+            Thread.sleep(1000);
         } 
         catch (InterruptedException e) 
         {
@@ -45,21 +49,7 @@ public class Army {
         ZS5Z=new Army();
         Ramphashats=new Army();
         MGang=new Army();
-    }
 
-
-
-
-
-    public void play()
-    {
-        Scanner sc=new Scanner(System.in);
-        Random rc=new Random();
-        System.out.println("Choose your faction");
-        System.out.println("1.TMM        2.ZS5Z        3.Ramphashats        4.M Gang");
-        choice=sc.nextInt();
-        System.out.println("Enter your army size");
-        size=sc.nextInt();
         enemyVal=rc.nextInt(4)+1;
         switch (enemyVal)
         {
@@ -68,13 +58,7 @@ public class Army {
             case 3: Enemy="Ramphashats"; break;
             case 4: Enemy="M Gang"; break;
         }
-        System.out.println("Your opponent: "+Enemy);
-        
-        sc.close();
     }
-
-
-
 
 
     public void stats()
@@ -92,9 +76,7 @@ public class Army {
             MGang.Soldier=0;
         }
 
-        
-        Random rc=new Random();
-        int EnemySize = rc.nextInt(1000)+1;
+        EnemySize = rc.nextInt(1000)+1;
         switch (enemyVal)
         {
             case 1: EnemyAtt=EnemySize*TMM.Soldier;  EnemyDef=EnemySize*TMM.Soldier; break;
@@ -109,6 +91,9 @@ public class Army {
             case 3: UserAtt=size*Ramphashats.Soldier;  UserDef=size*Ramphashats.Soldier; break;
             case 4: UserAtt=size*MGang.Soldier; UserDef=size*MGang.Soldier; break;
         }
+
+        UserHealth=UserDef-EnemyAtt;
+        EnemyHealth=EnemyDef-UserAtt;
     }
     
 
