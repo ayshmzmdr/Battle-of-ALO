@@ -15,8 +15,9 @@ public class GUI extends Army implements ActionListener,KeyListener
 
         defineArmies();
 
-        
+        ImageIcon icon=new ImageIcon("Logo.png");
         frame = new JFrame("Battle of ALO");
+        frame.setIconImage(icon.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800,800);
         frame.setResizable(false);
